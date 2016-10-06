@@ -174,6 +174,9 @@ class CameraRollPicker extends Component {
     } else {
       if (selected.length < maximum) {
         selected.push(image);
+      }else if(maximum==1){
+        selected.splice(0, 1);
+        selected.push(image);
       }
     }
 
