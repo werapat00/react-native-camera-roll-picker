@@ -69,7 +69,7 @@ class CameraRollPicker extends Component {
     }
 
     CameraRoll.getPhotos(fetchParams)
-      .then((data) => this._appendImages(data), (e) => console.log(e));
+      .then((data) => this._appendImages(data), (e) => {if(this.props.onError)this.props.onError(e);});
   }
 
   _appendImages(data) {
